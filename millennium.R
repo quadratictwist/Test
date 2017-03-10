@@ -104,9 +104,8 @@ CVaR2 <- -exp(-qnorm(1 - p)^2 / 2) / sqrt(2 * pi) / (1 - p) * sigma + mu
 library(plyr)
 
 # read data
-path <- "~/Documents/Berkeley/Millennium/test/"
-pos <- read.csv(paste0(path, "pos.csv"))
-trd <- read.csv(paste0(path, "trd.csv"))
+pos <- read.csv("Test/pos.csv")
+trd <- read.csv("Test/trd.csv")
 
 ## i. netted position per each user
 nettedPos <- ddply(pos, .(user), function(df) sum(df$pos[!is.na(df$pos)]))
